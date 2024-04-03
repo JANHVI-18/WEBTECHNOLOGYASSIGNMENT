@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Quiz</title>
+    <style>
+        body {
+            font-family: Rockwell, sans-serif;
+            background-color: #f5f5dc; 
+            color: #5d432c; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center; 
+        }
+
+        h1 {
+            margin-bottom: 20px; 
+        }
+
+        .question {
+            margin-bottom: 20px;
+            text-align: left; 
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML Quiz</h1> 
+        <div id="quiz">
+            <div id="question1" class="question">
+                <p>1. What does HTML stand for?</p>
+                <input type="radio" name="q1" value="a"> a) Hyper Text Markup Language<br>
+                <input type="radio" name="q1" value="b"> b) High Tech Machine Learning<br>
+                <input type="radio" name="q1" value="c"> c) Hyperlinks and Text Markup Language<br>
+                <input type="radio" name="q1" value="d"> d) Home Tool Markup Language<br>
+            </div>
+            <div id="question2" class="question">
+                <p>2. HTML5 is the latest version of HTML.</p>
+                <input type="radio" name="q2" value="true"> True<br>
+                <input type="radio" name="q2" value="false"> False<br>
+            </div>
+            <div id="question3" class="question">
+                <p>3. Which tag is used to define an unordered list in HTML?</p>
+                <input type="radio" name="q3" value="a"> a) &lt;ul&gt;<br>
+                <input type="radio" name="q3" value="b"> b) &lt;ol&gt;<br>
+                <input type="radio" name="q3" value="c"> c) &lt;li&gt;<br>
+                <input type="radio" name="q3" value="d"> d) &lt;ulist&gt;<br>
+            </div>
+            <div id="question4" class="question">
+                <p>4. The &lt;header&gt; element is used to define introductory content or a navigational block on a webpage.</p>
+                <input type="radio" name="q4" value="true"> True<br>
+                <input type="radio" name="q4" value="false"> False<br>
+            </div>
+            <div id="question5" class="question">
+                <p>5. Which attribute is used to provide alternative text for an image in HTML?</p>
+                <input type="radio" name="q5" value="a"> a) alt<br>
+                <input type="radio" name="q5" value="b"> b) src<br>
+                <input type="radio" name="q5" value="c"> c) title<br>
+                <input type="radio" name="q5" value="d"> d) image<br>
+            </div>
+            <div id="question6" class="question">
+                <p>6. The &lt;main&gt; element is used to represent the main content of a webpage, excluding header, footer, and navigation elements.</p>
+                <input type="radio" name="q6" value="true"> True<br>
+                <input type="radio" name="q6" value="false"> False<br>
+            </div>
+            <div id="question7" class="question">
+                <p>7. Which tag is used to create a hyperlink in HTML?</p>
+                <input type="radio" name="q7" value="a"> a) &lt;link&gt;<br>
+                <input type="radio" name="q7" value="b"> b) &lt;a&gt;<br>
+                <input type="radio" name="q7" value="c"> c) &lt;href&gt;<br>
+                <input type="radio" name="q7" value="d"> d) &lt;hyperlink&gt;<br>
+            </div>
+            <div id="question8" class="question">
+                <p>8. The &lt;footer&gt; element is used to define a footer for a webpage or a section.</p>
+                <input type="radio" name="q8" value="true"> True<br>
+                <input type="radio" name="q8" value="false"> False<br>
+            </div>
+            <div id="question9" class="question">
+                <p>9. What does the HTML &lt;iframe&gt; element do?</p>
+                <input type="radio" name="q9" value="a"> a) Defines a section that is quoted from another source.<br>
+                <input type="radio" name="q9" value="b"> b) Defines an inline frame, which is used to embed another document within the current HTML document.<br>
+                <input type="radio" name="q9" value="c"> c) Defines a clickable button.<br>
+                <input type="radio" name="q9" value="d"> d) Defines a paragraph.<br>
+            </div>
+            <div id="question10" class="question">
+                <p>10. HTML comments are visible to users when viewing the webpage.</p>
+                <input type="radio" name="q10" value="true"> True<br>
+                <input type="radio" name="q10" value="false"> False<br>
+            </div>
+        </div>
+        <button onclick="submitQuiz()">Submit Quiz</button>
+        <div id="quiz-results"></div>
+    </div>
+    <script>
+        function submitQuiz() {
+            const answers = {
+                q1: document.querySelector('input[name="q1"]:checked') ? document.querySelector('input[name="q1"]:checked').value : null,
+                q2: document.querySelector('input[name="q2"]:checked') ? document.querySelector('input[name="q2"]:checked').value : null,
+                q3: document.querySelector('input[name="q3"]:checked') ? document.querySelector('input[name="q3"]:checked').value : null,
+                q4: document.querySelector('input[name="q4"]:checked') ? document.querySelector('input[name="q4"]:checked').value : null,
+                q5: document.querySelector('input[name="q5"]:checked') ? document.querySelector('input[name="q5"]:checked').value : null,
+                q6: document.querySelector('input[name="q6"]:checked') ? document.querySelector('input[name="q6"]:checked').value : null,
+                q7: document.querySelector('input[name="q7"]:checked') ? document.querySelector('input[name="q7"]:checked').value : null,
+                q8: document.querySelector('input[name="q8"]:checked') ? document.querySelector('input[name="q8"]:checked').value : null,
+                q9: document.querySelector('input[name="q9"]:checked') ? document.querySelector('input[name="q9"]:checked').value : null,
+                q10: document.querySelector('input[name="q10"]:checked') ? document.querySelector('input[name="q10"]:checked').value : null,
+            };
+
+            const explanations = {
+                q1: "HTML stands for Hyper Text Markup Language, which is used to create and structure web pages.",
+                q2: "True. HTML5 is the latest version of HTML, introducing new features and improvements over previous versions.",
+                q3: "The correct answer is a) <ul>. The <ul> tag is used to define an unordered list in HTML.",
+                q4: "True. The <header> element is indeed used to define introductory content or a navigational block on a webpage.",
+                q5: "The correct answer is a) alt. The alt attribute is used to provide alternative text for an image in HTML.",
+                q6: "True. The <main> element is used to represent the main content of a webpage, excluding header, footer, and navigation elements.",
+                q7: "The correct answer is b) <a>. The <a> tag is used to create a hyperlink in HTML.",
+                q8: "True. The <footer> element is used to define a footer for a webpage or a section.",
+                q9: "The correct answer is b) Defines an inline frame, which is used to embed another document within the current HTML document.",
+                q10: "False. HTML comments are not visible to users when viewing the webpage."
+            };
+
+            let score = 0;
+            let result = '<h2>Quiz Results</h2><ul>';
+            for (const key in answers) {
+                result += '<li>';
+                if (answers[key] === "true") {
+                    result += 'Question ' + key.substring(1) + ': Correct<br>';
+                    score++;
+                } else if (answers[key] === "false") {
+                    result += 'Question ' + key.substring(1) + ': Incorrect<br>';
+                } else {
+                    result += 'Question ' + key.substring(1) + ': Not answered<br>';
+                }
+                if (explanations[key]) {
+                    result += '<p>' + explanations[key] + '</p>';
+                }
+                result += '</li>';
+            }
+            result += '</ul>';
+
+            result += '<p>Your Score: ' + score + ' out of ' + Object.keys(answers).length + '</p>';
+
+            const quizResults = document.getElementById('quiz-results');
+            quizResults.innerHTML = result;
+        }
+    </script>
+</body>
+</html>
